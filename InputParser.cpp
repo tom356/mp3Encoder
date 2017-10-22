@@ -1,24 +1,25 @@
 #include<iostream>
 #include "InputParser.h"
-using namespace WawToMP3;
+using namespace LameWrapper;
 
 Params::Params():input(""),output(""){}
 
-void WawToMP3::setParam(Options option, std::string value, Params &p)
+void LameWrapper::setParam(Options option, std::string value, Params &p)
 {
 	switch(option)
 	{
 		case OPTIONS_INPUT:	p.input = value; break;
 		case OPTIONS_OUTPUT: p.output = value; break;
+		default: break;
 	}
 }
-Options WawToMP3::getOptionType(const std::string &s)
+Options LameWrapper::getOptionType(const std::string &s)
 {
 	if(s == "-i") return OPTIONS_INPUT;
 	else if(s == "-o") return OPTIONS_OUTPUT;
 	else return OPTIONS_INVALID;
 }
-int WawToMP3::parseInput(int argc, char**argv, Params &params)
+int LameWrapper::parseInput(int argc, char**argv, Params &params)
 {
 	std::string param,value;
 	Options type;

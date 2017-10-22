@@ -1,7 +1,9 @@
-#include<string>
 #ifndef _INPUT_PARSER_H
 #define _INPUT_PARSER_H
-namespace WawToMP3
+
+#include<string>
+
+namespace LameWrapper
 {
 	enum Options{OPTIONS_INPUT,OPTIONS_OUTPUT,OPTIONS_INVALID};
 	enum ParseErrors{ ERROR_UNKNOWN_PARAM=1, ERROR_NO_VALUE};	
@@ -16,4 +18,5 @@ namespace WawToMP3
 	Options getOptionType(const std::string &s);
 	int parseInput(int argc, char**argv, Params &params);		
 }
+
 #endif
